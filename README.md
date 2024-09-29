@@ -1,23 +1,7 @@
-TODO:
-- проставь энвы (см. .env.example)
-- запусти постгрю (тестилось на 15й версии, но другая тоже подойдет) и создай базу
-- прогони миграции
-- доделай ручку, к которой написан TODO комментарий
+Что сделано:
 
-Как запустить приложение, прогнать линтер и миграции - см. Makefile
-
-За помощью обращайся к чему угодно, но начать лучше с документации:
-- [poetry](https://python-poetry.org/)
-- [yoyo](https://ollycope.com/software/yoyo/latest/)
-- [strawberry](https://strawberry.rocks/docs)
-- [graphql](https://graphql.org/learn/)
-- [fastapi](https://fastapi.tiangolo.com/)
-- [asyncpg](https://magicstack.github.io/asyncpg/current/)
-- [ruff](https://docs.astral.sh/ruff/)
-- [mypy](https://mypy.readthedocs.io/en/stable/getting_started.html)
-
-Мы знаем, что наше тестовое может решить (или помочь решить) ChatGPT.
-Мы ок с использованием вспомогательных инструментов для разработки,
-но, пожалуйста, не делайте этого бездумно.
-
-А есть ли в коде баги? Кто знает...
+1. Изменил структуру проекта. Разделил код по логическим модулям.
+2. Избавился от прямой зависимости от Postgres. Теперь queries зависят от абстрактного DataSource. Реализация конкретного DataSource лежит в data_sources.
+3. Поправил миграции, чтобы запускались корректно. 
+4. Реализовал требуемую ручку.
+5. Написал тесты для data_source. 
